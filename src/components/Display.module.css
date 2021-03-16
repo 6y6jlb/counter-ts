@@ -1,0 +1,31 @@
+.displayFrame {
+    background-color: #8772a5;
+    margin: 20px 20px 0 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-justify: inherit;
+    display: grid;
+    transition: all 1s ease;
+
+}
+
+.displayFrameError {
+    background-color: #dda8c1;;
+    color: #7a2d3c;
+    margin: 20px 20px 0 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    transition: all 1s ease;
+}
+
+.counter {
+    font-size: 3em;
+    justify-self: center;
+    align-self: center;
+}
+.string {
+    font-size: 1.3em;
+    justify-self: center;
+    align-self: center;
+}
