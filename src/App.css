@@ -7,7 +7,7 @@ body {
 
 }
 
-.counterFrame {
+.App {
     display: grid;
     width: 600px;
     height: 400px;
@@ -16,38 +16,10 @@ body {
     grid-template-rows: 250px 150px;
     background-color: #34364c;
     border-radius: 10px;
-
 }
 
-.buttonsFrame {
-    height: 110px;
-    align-content: center !important;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 150px);
-    justify-content: space-evenly;
-    border: 2px solid #8772a5;
-    margin: 20px;
-    border-radius: 10px;
-}
 
 .buttonsFrame button {
     color: white;
 }
-
-.menuFrame {
-    position: relative;
-    top: -150px;
-    z-index: -1;
-    background-color: #34364c;
-    border-radius: 10px;
-    transition: all 1.5s ease;
-
-
-}
-
-.menuFrame.open{
-    top:-18px;
-}
-
-
 
