@@ -15,10 +15,9 @@ type AnyButtonPropsType = {
 export function AnyButton(props: AnyButtonPropsType) {
 
     const currentErrorIncClass = props.disable ? style.incrementErrorFrame : style.incrementFrame
-    const currentErrorResetClass = props.disable ? style.resetErrorFrame : style.resetFrame
+    const currentErrorResetClass =props.disable ? style.resetErrorFrame : style.resetFrame
     const currentSetClass = props.size==='small'?style.setStyleFrame:style.setStyleFrameBig
-    const currentSetDisableClass = `${currentSetClass} ${props.disable&&style.setErrorFrame}`
-
+    const currentSetDisableClass =`${currentSetClass} ${props.disable&&style.setErrorFrame}`
 
 
     return (<>
@@ -26,7 +25,11 @@ export function AnyButton(props: AnyButtonPropsType) {
                     onClickCapture={() => {
                         props.onClick()
                     }}
-                    className={props.title === 'inc' ? currentErrorIncClass : props.title === 'reset'? currentErrorResetClass:currentSetDisableClass }>
+                    className={props.title === 'inc'
+                        ? currentErrorIncClass
+                        : props.title === 'reset'
+                            ? currentErrorResetClass
+                            :currentSetDisableClass }>
                 {props.title}
             </button>
         </>

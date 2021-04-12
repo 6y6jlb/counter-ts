@@ -1,22 +1,23 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {AnyButton} from "../anyButton/AnyButton";
 import {Display} from "./Display";
 import style from './CounterMain.module.css'
+import {AnyButton} from "../anyButton/AnyButton";
 
 type CounterMainPropsType = {
     error: boolean
     count: number
     displayString: string | null
-    incrementOnclick: () => void
+    disableReset: boolean
+    disableSet:boolean
     disableInc: boolean
     setOnClick: () => void
     resetOnclick: () => void
-    disableReset: boolean
-    disableSet:boolean
+    incrementOnclick: () => void
 }
 
-const CounterMain = (props: CounterMainPropsType) => {
+export function CounterMain (props: CounterMainPropsType) {
+
     return <>
         {props.displayString ? <Display error={props.error} count={props.count} title={props.displayString}/> :
             <Display error={props.error} count={props.count}/>}
@@ -39,5 +40,3 @@ const CounterMain = (props: CounterMainPropsType) => {
         </div>
     </>
 }
-
-export default CounterMain;
