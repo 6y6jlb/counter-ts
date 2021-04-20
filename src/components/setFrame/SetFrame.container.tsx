@@ -27,7 +27,7 @@ type SetFrameEffectContainerPropsType = {
     setCollapsedToValueAC: (value: boolean) => void
     setDisplayStringToValueAC: (value: null | string) => void
     setNewStartValueAC: (value: number) => void
-    setNewMaxValueAC:(value:number)=>void
+    setNewMaxValueAC: (value: number) => void
     setErrorAC: (value: boolean) => void
     maxValue: number
     error: boolean
@@ -37,10 +37,10 @@ type SetFrameEffectContainerPropsType = {
 }
 
 export const SetFrameEffectContainer: React.FC<SetFrameEffectContainerPropsType> = (props) => {
-    const disableSet = (props.maxValue <= props.startValue || props.startValue<0)
+    const disableSet = (props.maxValue <= props.startValue || props.startValue < 0)
     const onChangeMaxValue = (value: number) => {
         if (value > props.count && value > props.startValue && value >= 0 && props.startValue >= 0) {
-            props.setNewMaxValueAC(value)
+            props.setNewMaxValueAC ( value )
             props.setErrorAC ( false )
             props.setDisplayStringToValueAC ( 'enter value and press "set" ' )
         } else {
@@ -77,7 +77,7 @@ export const SetFrameEffectContainer: React.FC<SetFrameEffectContainerPropsType>
         <SetFrame maxValue={ props.maxValue }
                   error={ props.error }
                   startValue={ props.startValue }
-                  disableSet={disableSet }
+                  disableSet={ disableSet }
                   setOnClick={ setOnClick }
                   onChangeMaxValue={ onChangeMaxValue }
                   onChangeStartValue={ onChangeStartValue }
@@ -96,7 +96,12 @@ let mapStateToProps = (state: AppRootType): MapStatePropsType => {
 }
 
 const SetFrameContainer = connect ( mapStateToProps, {
-    setNewValueAC:setNewValueAC, setCollapsedToValueAC:setCollapsedToValueAC,
-    setDisplayStringToValueAC:setDisplayStringToValueAC, setNewStartValueAC:setNewStartValueAC,
-    setErrorAC:setErrorAC,setNewMaxValueAC:setNewMaxValueAC} ) ( SetFrameEffectContainer );
+    setNewValueAC,
+    setCollapsedToValueAC,
+    setDisplayStringToValueAC,
+    setNewStartValueAC,
+    setErrorAC,
+    setNewMaxValueAC
+} )
+( SetFrameEffectContainer );
 export default SetFrameContainer;
